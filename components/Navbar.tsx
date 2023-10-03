@@ -11,7 +11,7 @@ import Logo from '../utils/groovy-logo.png';
 
 const Navbar = () => {
 	return (
-		<div className="w-full flex justify-between items-center border-b-2 border-gray-200 py-6 px-4">
+		<div className="w-full flex justify-between items-center border-b-2 border-gray-200 py-4 px-4">
 			<Link href="/">
 				<div className="w-[90px] md:w-[130px] -my-2.5">
 					<Image
