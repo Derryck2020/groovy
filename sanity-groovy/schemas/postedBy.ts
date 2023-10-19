@@ -6,8 +6,8 @@ export default defineType({
   type: 'document',
   fields: [
     defineField({
-      name: 'name',
-      title: 'Name',
+      name: 'username',
+      title: 'User Name',
       type: 'string',
     }),
     // Add more fields as needed for the 'postedBy' type
