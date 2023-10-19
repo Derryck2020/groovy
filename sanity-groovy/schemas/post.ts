@@ -25,9 +25,9 @@ export default defineType({
     }),
     defineField({
       name: 'postedBy',
-      title: 'Groover',
+      title: 'Posted By',
       type: 'reference',
-      to: [{type: 'user'}], // Replace 'user' with the actual type for the author
+      to: [{type: 'user'}], // Reference the 'postedBy' schema type
       validation: (Rule) => Rule.required(),
     }),
     defineField({
@@ -40,7 +40,7 @@ export default defineType({
       name: 'comments',
       title: 'Comments',
       type: 'array',
-      of: [{type: 'text'}], // Assuming you have a 'comment' type
+      of: [{type: 'comment'}], // Assuming you have a 'comment' type
     }),
     defineField({
       name: 'topic',
@@ -53,9 +53,9 @@ export default defineType({
 
   preview: {
     select: {
-      title: 'title',
-      user: 'user.name',
-      media: 'mainImage',
+      title: 'title', // You should replace this with the actual title field in your 'post' type
+      user: 'postedBy.name', // Reference the 'name' field in the 'postedBy' type
+      media: 'mainImage', // Replace this with the actual image field
     },
     prepare(selection) {
       const {user} = selection
