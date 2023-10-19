@@ -6,14 +6,15 @@ export default defineType({
   type: 'document',
   fields: [
     defineField({
-      name: 'postedBy',
-      title: 'Groover',
-      type: 'string',
-    }),
-    defineField({
       name: 'comment',
       title: 'Comment',
       type: 'text',
+    }),
+    defineField({
+      name: 'postedBy',
+      title: 'Posted By',
+      type: 'reference',
+      to: [{type: 'comment'}], // Reference to the "postedBy" type
     }),
   ],
 })
