@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import { FaCloudUploadAlt } from 'react-icons/fa';
-import { MdDelete } from 'react-icons/md';
 import axios from 'axios';
 import { SanityAssetDocument } from '@sanity/client';
 
@@ -10,7 +9,7 @@ import { client } from '../utils/client';
 import { topics } from '../utils/constants';
 import { BASE_URL } from '../utils';
 
-const upload = () => {
+const Upload = () => {
 	const [isLoading, setIsLoading] = useState(false);
 	const [videoAsset, setVideoAsset] = useState<
 		SanityAssetDocument | undefined
@@ -171,7 +170,7 @@ const upload = () => {
 							}}
 							className="bg-[#a20ac9] text-white text-md font-medium p-1 rounded w-28 lg:w-44 outline-none"
 						>
-							Upload
+							{savingPost ? 'Posting...' : 'Post'}
 						</button>
 					</div>
 				</div>
@@ -180,4 +179,4 @@ const upload = () => {
 	);
 };
 
-export default upload;
+export default Upload;
